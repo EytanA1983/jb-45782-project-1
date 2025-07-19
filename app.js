@@ -10,7 +10,7 @@ function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-function renderTasks(fromStorage = false) {
+function renderTasks() {
   board.innerHTML = "";
   tasks.forEach(({id, description, dueDate, dueTime}) => {
     const note = document.createElement("div");
@@ -36,7 +36,7 @@ function renderTasks(fromStorage = false) {
 function deleteTask(id) {
   tasks = tasks.filter(task => task.id !== id);
   saveTasks();
-  renderTasks(true);
+  renderTasks();
 }
 
 form.addEventListener("submit", e => {
@@ -53,5 +53,4 @@ form.addEventListener("submit", e => {
   renderTasks();
 });
 
-// לטעינת משימות קיימות
-renderTasks(true);
+renderTasks();
