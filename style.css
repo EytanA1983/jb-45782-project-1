@@ -1,83 +1,76 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Winky Rough', sans-serif;
-  background: url("tile - לוח שעם.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-
-.title {
-  text-align: center;
-  margin: 20px 0;
-  font-size: 2em;
-}
-
-.form-wrapper {
-  max-width: 400px;
-  margin: 0 auto;
-  background: url("formbg - שורות לפתק.jpg") no-repeat center center;
-  background-size: 100% 100%;
-  padding: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: none;
-}
-
-textarea {
-  resize: none;
-  height: 60px;
-}
-
-.board {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  padding: 20px;
-}
-
-.note {
-  position: relative;
-  background: url("notebg - פתק צהוב.png") no-repeat center center;
-  background-size: cover;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  animation: fadeIn 0.5s ease;
-}
-
-.note-content {
-  overflow-y: auto;
-  padding: 10px;
-  flex-grow: 1;
-}
-
-.note-footer {
-  font-size: 0.8em;
-  padding: 5px;
-  text-align: left;
-}
-
-.delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  display: none;
-  cursor: pointer;
-  color: red;
-  font-size: 1.2em;
-}
-
-.note:hover .delete-btn {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
-}
+    background:url(tile\ -\ לוח\ שעם.jpg);
+    font-family: Arial, sans-serif;
+  }
+ 
+  h1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 20px;
+  }
+ 
+  body form {
+    background: repeating-linear-gradient(white, white 28px, #cce5ff 29px, white 30px);
+    border-left: 5px solid red;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #aaa;
+  }
+ 
+  body #task-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    direction: ltr;
+  }
+ 
+  .task-card {
+    background:url(notebg\ -\ פתק\ צהוב.png);
+    width: 70%;
+    height: 220px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  }
+ 
+  body #task-board .task-card.show {
+    opacity: 1;
+  }
+ 
+  body #task-board .task-card:hover .delete-btn {
+    display: block;
+    padding: 15px;
+  }
+ 
+  body #task-board .task-card p {
+    margin: 0;
+    overflow-y: auto;
+    height: 130px;
+  }
+ 
+  body #task-board .task-card small {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 0.85em;
+    color: #555;
+  }
+ 
+  body #task-board .task-card .delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: none;
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+  }
