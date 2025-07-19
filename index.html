@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Board</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Winky+Rough:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+<h1 class="title">Task Board</h1>
+
+<div class="form-container">
+  <form id="taskForm">
+    <label for="taskDesc">Task Description</label>
+    <textarea id="taskDesc" required placeholder="Write your task here"></textarea>
+
+    <label for="taskDate">Due Date</label>
+    <input type="date" id="taskDate" required>
+
+    <label for="taskTime">Due Time</label>
+    <input type="time" id="taskTime" required>
+
+    <button type="submit" class="btn btn-primary">Add Task</button>
+    <input type="reset" class="btn btn-secondary" value="Reset">
+  </form>
+</div>
+
+<div class="board" id="board"></div>
+
+</body>
+</html>
